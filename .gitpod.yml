@@ -1,5 +1,5 @@
 image:
-  file: Dockerfile
+  file: .gitpod.Dockerfile
 ports:
   - port: 6080
     onOpen: open-browser
@@ -8,4 +8,6 @@ ports:
   - port: 35900
     onOpen: ignore
 tasks:
-  - command: cd /tmp/eclipse-installer && ./eclipse-inst
+  - command: |
+      cd $HOME/eclipse-installer
+      chmod +x eclipse-inst && ./eclipse-inst
